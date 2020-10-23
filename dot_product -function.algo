@@ -1,0 +1,37 @@
+FUNCTION dot_product() : FLOAT
+VAR
+    i:INTEGER;
+    v1,v2 :ARRAY_OF FLOAT[3]
+    ps:INTEGER:=0;
+BEGIN
+    Write ("Donner les coordonnées du premier vecteur");
+    FOR i FROM 0 TO 2 DO
+        Read(v1[i]);
+    END_FOR
+    Write ("Donner les coordonnées du deuxième vecteur");
+    FOR i FROM 0 TO 2 DO
+        Read(v2[i]);
+    END_FOR
+    Write("Le produit scalire des deux vecteurs est:");
+    ps:=0;
+    FOR i FROM 0 TO 2 DO 
+        ps:=ps+(v1[i]*v2[i]);
+    END_FOR
+    RETURN ps;
+END 
+
+ALGORITHM Orthogonal
+VAR
+    n, i :INTEGER;
+    ps: FLOAT:=0;
+BEGIN
+    Write ("Donner le nombre de paires de vecteurs");
+        Read(n);
+    FOR i FROM 1 TO n DO
+    ps:= dot_product()
+    IF(ps = 0) THEN
+    Write("les deux vecteurs sont orthogonaux");
+    ELSE 
+    Write("les deux vecteurs ne sont pas orthogonaux");
+    END_FOR
+END
